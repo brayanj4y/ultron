@@ -1,36 +1,18 @@
-# ULTRON v2 configuration
+# ULTRON Configuration
 
-# Camera / recognition
-camera_index: 0
-face_match_threshold: 0.48
-registration_samples: 20
+# Face recognition settings
+face_match_threshold: 0.6  # Cosine similarity threshold (0.0-1.0, higher = stricter)
+registration_samples: 20   # Number of face captures per person during registration
 
-# Audio feedback
-voice_volume: 1.0
-voice_rate: 150
+# Admin override settings
+admin_passphrase: "ultron override"  # Spoken passphrase to add new authorized user
 
-# Gate behavior
-gate_open_seconds: 3
-gate_scan_interval_ms: 900
-gate_event_cooldown_seconds: 6
-fail_secure: true
+# Audio settings
+voice_volume: 1.0  # TTS volume (0.0-1.0)
+voice_rate: 150    # Words per minute for TTS
 
-# School fee policy
-default_grace_period_days: 3
+# Camera settings
+camera_index: 0  # Webcam device index (0 = default camera)
 
-# Arduino
-arduino_port: "COM3"
-
-# Admin contact
-admin_contact_email: "admin@ultron-school.local"
-admin_contact_phone: "+1234567890"
-
-# Bootstrap staff accounts
-bootstrap_admin_code: "admin"
-bootstrap_admin_password: ""
-bootstrap_admin_email: "admin@ultron-school.local"
-bootstrap_admin_phone: "+1234567890"
-bootstrap_bursar_code: "bursar"
-bootstrap_bursar_password: ""
-bootstrap_bursar_email: "bursar@ultron-school.local"
-bootstrap_bursar_phone: "+1234567899"
+# Timeouts
+admin_code_timeout: 10  # Seconds to listen for admin code after threat detection
